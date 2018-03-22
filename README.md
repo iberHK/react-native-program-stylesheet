@@ -102,4 +102,13 @@ import getSize from 'react-native-program-stylesheet';
     left: getSize(40),
     width: getSize(50),
     height: getSize(50), 
-    backgroundColor: '#ff0000'}}/>```
+    backgroundColor: '#ff0000'}}/>
+```
+
+### <li>优化ios plus 一个像素的显示问题，根据分辨率保证最小1个像素渲染，divider border必备</li>
+
+<pre>
+if (size <= 1) {
+        return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
+    }
+</pre>
