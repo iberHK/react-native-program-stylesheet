@@ -5,6 +5,9 @@ import {
   View
 } from 'react-native';
 
+//当不是使用StyleSheet进行布局时，引用
+import getSize from 'react-native-program-stylesheet';
+
 export default class App extends Component {
 
   render() {
@@ -27,6 +30,11 @@ export default class App extends Component {
             80%
           </Text>
         </View>
+
+        <View style={{
+          position: 'absolute', top: getSize(40), left: getSize(40),
+          width: getSize(50), height: getSize(50), backgroundColor: '#ff0000'
+        }}></View>
       </View>
     );
   }

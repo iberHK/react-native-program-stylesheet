@@ -8,3 +8,7 @@
 
 ### 安装：
 <code>yarn add react-native-program-stylesheet</code><br>
+
+### 使用:
+#### 需要在程序入口处导入(index.js / index.ios.js / index.android)
+<code>import StyleSheet375 from 'react-native-program-stylesheet';</code>
