@@ -29,17 +29,58 @@ AppRegistry.registerComponent('example', () => App);
 ### <li>其他页面正常使用StyleSheet，不用再次import</li>
 App.js (或者其他任意页面中使用)
 
-<code>
-    const styles = StyleSheet.create({
-
+<code>const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 0x00000050
+  },
   dialog: {
-      
     width: 307,
     height: 136,
     marginLeft: 34,
     marginRight: 34,
     backgroundColor: '#ffffff',
     borderRadius: 5
+  },
+  titleView: {
+    width: 375,
+    height: 22,
+    marginTop: 30,
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  title: {
+    fontSize: 16,
+    lineHeight: 22,
+    fontWeight: 'bold',
+    color: '#333333',
+    marginLeft: 18
+  },
+  status: {
+    fontSize: 14,
+    fontWeight: '100',
+    marginLeft: 104,
+    color: '#333333'
+  },
+  progressView: {
+    marginTop: 29,
+  },
+  progressBg: {
+    width: 234,
+    height: 4,
+    marginLeft: 16,
+    borderRadius: 4,
+    backgroundColor: '#DEDFE0'
+  },
+  progressFg: {
+    width: 188,
+    height: 4,
+    marginLeft: 16,
+    borderRadius: 4,
+    backgroundColor: '#1097D5',
+    position: 'absolute'
   },
   progressText: { //其实所有的子控件，都可以以position:absolute定位到父容器中，来达到节省布局节点
     fontSize: 14,
@@ -50,5 +91,4 @@ App.js (或者其他任意页面中使用)
     color: '#1097D5',
     fontWeight: '100'
   }
-});
-</code>
+});</code>
