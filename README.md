@@ -78,7 +78,7 @@ App.js (或者其他任意页面中使用)
     backgroundColor: '#1097D5',
     position: 'absolute'
   },
-  progressText: { //其实所有的子控件，都可以以position:absolute定位到父容器中，来达到节省布局节点
+  progressText: { //在格式化成375情况下，所有的子控件，可以position:absolute定位到父容器中，节省节点层级
     fontSize: 14,
     lineHeight: 20,
     position: 'absolute',
@@ -88,3 +88,13 @@ App.js (或者其他任意页面中使用)
     fontWeight: '100'
   }
 });</pre>
+
+### <li>非StyleSheet中使用</li>
+<pre>
+//当不是使用StyleSheet进行布局时，引用
+import getSize from 'react-native-program-stylesheet';
+<View style={{
+          position: 'absolute', top: getSize(40), left: getSize(40),
+          width: getSize(50), height: getSize(50), backgroundColor: '#ff0000'
+        }}></View>
+</pre>
