@@ -108,7 +108,9 @@ import getSize from 'react-native-program-stylesheet';
 ### <li>优化ios plus 一个像素的显示问题，根据分辨率保证最小1个像素渲染，divider border必备</li>
 
 <pre>
-if (size <= 1) {
+if (size < 1) {
     return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
 }
+//一条水平分割线
+<View style={{width: 375, height: 0.5, backgroundColor:'#dcdcdc'}}>
 </pre>
