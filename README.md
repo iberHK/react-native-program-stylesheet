@@ -109,6 +109,6 @@ import getSize from 'react-native-program-stylesheet';
 
 <pre>
 if (size <= 1) {
-        return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
-    }
+    return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
+}
 </pre>
