@@ -10,14 +10,16 @@
 <code>yarn add react-native-program-stylesheet</code><br>
 
 ### 使用:
-### <li>在程序入口处导入</li>
+### <li>在程序入口处import</li>
 <code>index.js</code>
 
 <pre>
 import { AppRegistry } from 'react-native';
 import App from './App';
+
 //在程序入口处导入
 import StyleSheet375 from 'react-native-program-stylesheet';
+
 AppRegistry.registerComponent('example', () => App);
 </pre>
 
