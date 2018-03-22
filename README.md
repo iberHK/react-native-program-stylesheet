@@ -6,6 +6,8 @@
 
 ![img](https://github.com/iberHK/react-native-program-stylesheet/blob/master/screenshot/demo.png?raw=true)
 
+![img](https://github.com/iberHK/react-native-program-stylesheet/blob/master/screenshot/demo2.png?raw=true)
+
 ### 安装：
 <code>yarn add react-native-program-stylesheet</code><br>
 
