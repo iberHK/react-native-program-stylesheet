@@ -29,7 +29,7 @@ AppRegistry.registerComponent('example', () => App);
 ### <li>其他页面正常使用StyleSheet，不用再次import</li>
 App.js (或者其他任意页面中使用)
 
-<code>const styles = StyleSheet.create({
+<code>```const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -91,4 +91,4 @@ App.js (或者其他任意页面中使用)
     color: '#1097D5',
     fontWeight: '100'
   }
-});</code>
+});```</code>
