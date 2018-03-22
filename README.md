@@ -90,11 +90,14 @@ App.js (或者其他任意页面中使用)
 });</pre>
 
 ### <li>非StyleSheet中使用</li>
-<pre>
+<code>
 //当不是使用StyleSheet进行布局时，引用
 import getSize from 'react-native-program-stylesheet';
 <View style={{
-          position: 'absolute', top: getSize(40), left: getSize(40),
-          width: getSize(50), height: getSize(50), backgroundColor: '#ff0000'
-        }}></View>
-</pre>
+    position: 'absolute', 
+    top: getSize(40),
+    left: getSize(40),
+    width: getSize(50),
+    height: getSize(50), 
+    backgroundColor: '#ff0000'}}/>
+</code>
