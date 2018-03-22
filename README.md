@@ -25,7 +25,8 @@ AppRegistry.registerComponent('example', () => App);
 ### <li>其他页面正常使用StyleSheet，不用再次import</li>
 App.js (或者其他任意页面中使用)
 
-<pre>const styles = StyleSheet.create({
+<pre>
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -87,17 +88,18 @@ App.js (或者其他任意页面中使用)
     color: '#1097D5',
     fontWeight: '100'
   }
-});</pre>
+});
+</pre>
 
 ### <li>非StyleSheet中使用</li>
-<code>
 //当不是使用StyleSheet进行布局时，引用
 import getSize from 'react-native-program-stylesheet';
+
+```
 <View style={{
     position: 'absolute', 
     top: getSize(40),
     left: getSize(40),
     width: getSize(50),
     height: getSize(50), 
-    backgroundColor: '#ff0000'}}/>
-</code>
+    backgroundColor: '#ff0000'}}/>```
