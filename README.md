@@ -111,6 +111,10 @@ import getSize from 'react-native-program-stylesheet';
 if (size < 1) {
     return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
 }
+</pre>
+
+```
 //一条水平分割线
 <View style={{width: 375, height: 0.5, backgroundColor:'#dcdcdc'}}>
-</pre>
+```
+
