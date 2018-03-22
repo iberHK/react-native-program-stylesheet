@@ -1,0 +1,28 @@
+{
+  "name": "react-native-program-stylesheet",
+  "version": "1.0.0",
+  "description": "把任意屏幕宽分成375，快速实现适配任意分辨率的布局。",
+  "main": "./lib/StyleSheet375.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iberHK/react-native-style-sheet-375.git"
+  },
+  "keywords": [
+    "react-native",
+    "stylesheet",
+    "375"
+  ],
+  "author": "iberHK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iberHK/react-native-style-sheet-375/issues"
+  },
+  "homepage": "https://github.com/iberHK/react-native-style-sheet-375#readme"
+}
