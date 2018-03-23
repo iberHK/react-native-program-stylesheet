@@ -27,14 +27,19 @@ AppRegistry.registerComponent('example', () => App);
 
 
 ### <li>其他页面正常使用StyleSheet，不用再次import</li>
-App.js (或者其他任意页面中使用)
+<code>App.js (或者其他任意页面中使用)</code>
 
 <pre>
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
+  },
+  cover: {
+    position: 'absolute',
+    width: 375,       //屏幕宽度
+    height: Number.MAX_SAFE_INTEGER,  //屏幕高度
     backgroundColor: 0x00000050
   },
   dialog: {
@@ -83,7 +88,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#1097D5',
     position: 'absolute'
   },
-  progressText: { //在格式化成375情况下，所有的子控件，可以position:absolute定位到父容器中，节省节点层级
+  progressText: { //在375机制下，可以放心使用这种方式布局
     fontSize: 14,
     lineHeight: 20,
     position: 'absolute',
@@ -95,25 +100,50 @@ const styles = StyleSheet.create({
 });
 </pre>
 
-### <li>非StyleSheet中使用</li>
-//当不是使用StyleSheet进行布局时，引用
-import getSize from 'react-native-program-stylesheet';
+### <li>Component中使用</li>
+在继承自Component中使用，不是使用StyleSheet时，
 
 ```
-<View style={{
-    position: 'absolute', 
-    top: getSize(40),
-    left: getSize(40),
-    width: getSize(50),
-    height: getSize(50), 
-    backgroundColor: '#ff0000'}}/>
+export default class App extends Component {
+
+  render(){
+    return <View style={{
+        position: 'absolute', 
+        top: this.getSize(40),
+        left: this.getSize(40),
+        width: this.getSize(50),
+        height: this.getSize(50), 
+        backgroundColor: '#ff0000'}}/>
+  }
+
+}
 ```
 
-### <li>优化ios plus 一个像素的显示问题，根据分辨率保证最小1个像素渲染，divider border必备</li>
+### <li>非StyleSheet非Component中使用</li>
+<pre>
+import ProgramStyleSheet from 'react-native-program-stylesheet';
+
+export default class TestUtils {
+
+    static computeSize(size) {
+        return ProgramStyleSheet.getSize(size);
+    }
+
+}
+</pre>
+
+### <li>优化iPhone Plus 一个像素的显示问题，根据分辨率保证最小1个像素渲染，divider、border必备</li>
 
 <pre>
-if (size < 1) {
-    return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
+const getSize = (size) => {
+    //当size < 1，一般用于边框或者分割线，避免不足一个像素的情况。
+    if (size == Number.MAX_SAFE_INTEGER) {
+        return screenHeight;
+    } else if (size < 1) {
+        return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
+    } else {
+        return parseInt(screenWidth * size / 375);
+    }
 }
 </pre>
 
@@ -122,3 +152,14 @@ if (size < 1) {
 <View style={{width: 375, height: 0.5, backgroundColor:'#dcdcdc'}}>
 ```
 
+
+### <li>屏幕宽和屏幕高</li>
+
+<pre>
+StyleSheet.create({
+  container: {
+    width: 375,       //屏幕宽
+     height: Number.MAX_SAFE_INTEGER,  //屏幕高度
+  }
+})
+</pre>
