@@ -5,38 +5,42 @@ import {
   View
 } from 'react-native';
 
-//当不是使用StyleSheet进行布局时，引用
-import getSize from 'react-native-program-stylesheet';
+import TestUtils from './TestUtils';
 
 export default class App extends Component {
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.dialog}>
-          <View style={styles.titleView}>
-            <Text style={styles.title}>
-              應用程式更新
-            </Text>
-            <Text style={styles.status}>
-              更新中...
-            </Text>
-          </View>
-          <View style={styles.progressView}>
-            <View style={styles.progressBg} />
-            <View style={styles.progressFg} />
-          </View>
-          <Text style={styles.progressText}>
-            80%
-          </Text>
-        </View>
+  constructor(props) {
+    super(props);
+    alert(TestUtils.computeSize(10))
+  }
 
-        <View style={{
-          position: 'absolute', top: getSize(40), left: getSize(40),
-          width: getSize(50), height: getSize(50), backgroundColor: '#ff0000'
-        }}></View>
+  render() {
+    return <View style={styles.container}>
+      <View style={styles.cover} >
       </View>
-    );
+      <View style={styles.dialog}>
+        <View style={styles.titleView}>
+          <Text style={styles.title}>
+            應用程式更新
+            </Text>
+          <Text style={styles.status}>
+            更新中...
+            </Text>
+        </View>
+        <View style={styles.progressView}>
+          <View style={styles.progressBg} />
+          <View style={styles.progressFg} />
+        </View>
+        <Text style={styles.progressText}>
+          80%
+          </Text>
+      </View>
+
+      <View style={{
+        position: 'absolute', top: this.getSize(40), left: this.getSize(40),
+        width: this.getSize(50), height: this.getSize(50), backgroundColor: '#ff0000'
+      }}></View>
+    </View>
   }
 }
 
@@ -44,7 +48,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
+  },
+  cover: {
+    position: 'absolute',
+    width: 375,
+    height: Number.MAX_SAFE_INTEGER,
     backgroundColor: 0x00000050
   },
   dialog: {
