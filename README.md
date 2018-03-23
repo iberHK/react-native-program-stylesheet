@@ -134,21 +134,8 @@ export default class TestUtils {
 
 ### <li>优化iPhone Plus 一个像素的显示问题，根据分辨率保证最小1个像素渲染，divider、border必备</li>
 
-<pre>
-const getSize = (size) => {
-    //当size < 1，一般用于边框或者分割线，避免不足一个像素的情况。
-    if (size == Number.MAX_SAFE_INTEGER) {
-        return screenHeight;
-    } else if (size < 1) {
-        return (PixelRatio.get() == 3 ? 2 : 1) / PixelRatio.get()
-    } else {
-        return parseInt(screenWidth * size / 375);
-    }
-}
-</pre>
-
+<code>一条水平分割线</code>
 ```
-//一条水平分割线
 <View style={{width: 375, height: 0.5, backgroundColor:'#dcdcdc'}}>
 ```
 
